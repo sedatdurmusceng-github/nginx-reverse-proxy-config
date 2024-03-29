@@ -1,0 +1,2 @@
+ssl sertifikalarını içeren dizindir.
+

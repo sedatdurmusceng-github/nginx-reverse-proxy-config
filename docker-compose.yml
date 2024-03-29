@@ -1,0 +1,31 @@
+version: '3'
+services:      
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    ports: 
+      - "80:80"
+      - "443:443"
+      - "81:81"
+      - "9443:9443"
+      - "5000:5000"
+      - "3001:3001"
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./certs:/etc/nginx/certs
+      - ./logs:/var/log/nginx
+
+  # docker yönetimi için kullanılacak bir görsel arayüz sunar. 'admin' kullanıcısıyla veya yeni kullanıcı açılarak,
+  # yerelde ve remote'da bulunan docker servisleri üzerinde kontroller sağlanabilir.
+  container-manager:
+    image: portainer/portainer-ce
+    container_name: container-manager
+    restart: always
+    ports:
+      - "18000:8000"
+      - "19000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      admin-password: admin
+      
