@@ -11,7 +11,7 @@ Yayınlanan mikro servislerin Reverse Proxy, Load Balancer yönlendirme ve SSL k
 
 **logs:** log dosyalarını barındırır.
 
-**docker-compose.yml:** Load Balancer olarak NGINX kullanılmaktadır. Bu alt yapıyı ayaklandırmak için kullanılan dosyadır.
+**docker-compose.yml:** Load Balancer olarak NGINX kullanılmaktadır. NGINX yapısını ayaklandırmak için kullanılan dosyadır.
 
 ## Kurulum
 
